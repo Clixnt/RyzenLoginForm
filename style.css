@@ -1,22 +1,21 @@
 body {
-    background-color: whitesmoke;
     display: grid;
     place-items: center;
     height: 100vh;
+    height: 100svh;
     
     background-image: url(layered-peaks-haikei.svg);
     background-repeat: no-repeat;
     background-size: cover;  
 }
 * {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
-
-/* Input Buttons */
+/* Form - @media Responsive */
 form {
     filter: drop-shadow(2px 2px 10px );
     height: 450px;
@@ -30,6 +29,8 @@ form {
                 rgba(0, 0, 0, 0.17) 0px 12px 13px,
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+/* Container -- RyzenImageLogo*/
 .container {
     display: flex;
     flex-direction: column;
@@ -37,44 +38,60 @@ form {
     justify-content: center;
     gap: 10px;  
     transform: translateY(22%);
-}
-form #ryzen-image-con {
-    width: 200px;
-    margin-bottom: 20px;
+
+    & > img {
+        width: 200px;
+        margin-bottom: 20px;
+        transition: all 0.5s;
+
+        &:hover {
+            transition: all 0.5s;
+            scale: 1.03; 
+            filter: drop-shadow(0px 0px 3px );
+        }
+    }
 }
 
-/* input design */
-form input {
+/* input & button design */
+input {
     text-indent: 10px;
     border-radius: 0 8px 8px 0;
     border: none;
     background-color: rgb(206, 199, 193);
-}
-form button {
-    border-radius:8px;
-    border: none;
-    background-color: rgb(206, 199, 193);
-}
-input {
     width: 250px;
     height: 40px;
+    transition: all 0.5s;
 }
 button {
+    border-radius:8px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(206, 199, 193);
+
     width: 90px;
     height: 33px;
+    transition: all 0.5s;
+
+    
+    &:hover {
+        transition: all 0.5s;
+        scale: 1.03; 
+    }
 }
 
 /* Label design */
-.first-input, .second-input, .third-input {
+.first-input, 
+.second-input {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.first-input label, .second-input label, .third-input label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(245, 115, 10);
+
+    & label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(245, 115, 10);
+    }
 }
 label {
     width: 30px;
@@ -82,122 +99,24 @@ label {
     border-radius: 8px 0 0 8px;
 }
 
-/* Animation And stuff blah blah*/
-input:hover, button:hover {
-    transition: all 0.5s;
-    scale: 1.04; 
-}
-input, button {
-    transition: all 0.5s;
-}
-/* form {
-    transition: all 0.5s;
-    animation-name: Colors;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    transition: all 0.5s;
-}
-@keyframes Colors {
-    0% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.27) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 2px -12px 30px,
-        rgba(0, 0, 0, 0.12) 2px 4px 6px,
-        rgba(0, 0, 0, 0.17) 2px 12px 13px,
-        rgba(0, 0, 0, 0.09) 2px -3px 5px;
-    }
-    10% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.25) 2px 54px 55px,
-        rgba(0, 0, 0, 0.12) 4px -12px 30px,
-        rgba(0, 0, 0, 0.12) 4px 4px 6px,
-        rgba(0, 0, 0, 0.17) 4px 12px 13px,
-        rgba(0, 0, 0, 0.09) 4px -3px 5px;
-    }
-    20% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.25) 4px 54px 55px,
-        rgba(0, 0, 0, 0.12) 6px -12px 30px,
-        rgba(0, 0, 0, 0.12) 6px 4px 6px,
-        rgba(0, 0, 0, 0.17) 6px 12px 13px,
-        rgba(0, 0, 0, 0.09) 6px -3px 5px;
-    }
-    40% {
-        border: solid 1px rgb(147, 28, 28);
-        box-shadow: rgba(0, 0, 0, 0.25) 6px 54px 55px,
-        rgba(0, 0, 0, 0.12) 8px -12px 30px,
-        rgba(0, 0, 0, 0.12) 8px 4px 6px,
-        rgba(0, 0, 0, 0.17) 8px 12px 13px,
-        rgba(0, 0, 0, 0.09) 8px -3px 5px;
-    }
-    50% {
-        border: solid 1px rgb(147, 28, 28);
-        box-shadow: rgba(0, 0, 0, 0.25) 8px 54px 55px,
-        rgba(0, 0, 0, 0.12) 10px -12px 30px,
-        rgba(0, 0, 0, 0.12) 10px 4px 6px,
-        rgba(0, 0, 0, 0.17) 10px 12px 13px,
-        rgba(0, 0, 0, 0.09) 10px -3px 5px;
-    }
-    60% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.25) 6px 54px 55px,
-        rgba(0, 0, 0, 0.12) 8px -12px 30px,
-        rgba(0, 0, 0, 0.12) 8px 4px 6px,
-        rgba(0, 0, 0, 0.17) 8px 12px 13px,
-        rgba(0, 0, 0, 0.09) 8px -3px 5px;
-    }
-    70% {
-        border: solid 1px red;
-        box-shadow: rgba(0, 0, 0, 0.25) 4px 54px 55px,
-        rgba(0, 0, 0, 0.12) 6px -12px 30px,
-        rgba(0, 0, 0, 0.12) 6px 4px 6px,
-        rgba(0, 0, 0, 0.17) 6px 12px 13px,
-        rgba(0, 0, 0, 0.09) 6px -3px 5px;
-    }
-    80% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.25) 2px 54px 55px,
-        rgba(0, 0, 0, 0.12) 4px -12px 30px,
-        rgba(0, 0, 0, 0.12) 4px 4px 6px,
-        rgba(0, 0, 0, 0.17) 4px 12px 13px,
-        rgba(0, 0, 0, 0.09) 4px -3px 5px;
-    }
-    100% {
-        border: solid 1px orange;
-        box-shadow: rgba(0, 0, 0, 0.27) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 2px -12px 30px,
-        rgba(0, 0, 0, 0.12) 2px 4px 6px,
-        rgba(0, 0, 0, 0.17) 2px 12px 13px,
-        rgba(0, 0, 0, 0.09) 2px -3px 5px;
-    }
-} */
-textarea:focus, input:focus {
-    color: rgb(163, 90, 63);
-}
+/* Animation hover sa text And stuff blah blah*/
+textarea:focus, 
+input:focus, 
 input:placeholder-shown {
     color: rgb(163, 90, 63);
 }
-.container #ryzen-image-con {
-    transition: all 0.5s;
-    scale: 1.04; 
-}
-.container #ryzen-image-con:hover {
-    transition: all 0.5s;
-    scale: 1.15; 
-    filter: drop-shadow(0px 0px 3px );
-}
 
-/* Resposive */
+/* Resposive -- on form width, image-logo, input, button and label */
 @media only screen and (max-width: 425px) {
     form {
         height: 440px;
         width: 315px;
     }
-    form #ryzen-image-con {
+    .container #ryzen-image-con {
         width: 180px;
     }
     input {
-        width: 200px;
+        width: 220px;
         height: 35px;
     }
     button {
@@ -206,14 +125,14 @@ input:placeholder-shown {
     label {
         height: 35px;
     }
-  }
+}
 
-  @media only screen and (max-width: 320px) {
+@media only screen and (max-width: 320px) {
     form {
         height: 410px;
         width: 265px;
     }
-    form #ryzen-image-con {
+    .container #ryzen-image-con {
         width: 170px;
     }
     input {
@@ -227,4 +146,4 @@ input:placeholder-shown {
     label {
         height: 33px;
     }
-  }
+}
